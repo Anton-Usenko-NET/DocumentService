@@ -106,6 +106,8 @@ public class Worker : BackgroundService
                 /create_expence_invoice Ц видаткова накладна
                 /create_invoice_for_payment Ц рахунок на оплату
                 /create_ttn Ц ““Ќ
+
+                /help - допомога
                 """, parseMode: ParseMode.Html, linkPreviewOptions: true,
                     replyMarkup: new ReplyKeyboardRemove());
                 break;
@@ -171,6 +173,9 @@ public class Worker : BackgroundService
                     linkPreviewOptions: true, replyMarkup: new ReplyKeyboardRemove());
                 break;
 
+            case "/help":
+                await bot.SendMessage(msg.Chat, "«а допомогою звертайтесь до @sql03", parseMode: ParseMode.Html);
+                break;
             case "/create_contract_1":
                 await bot.SendMessage(msg.Chat, "<i>«ачекайте, будь ласка...</i>", parseMode: ParseMode.Html);
                 doc = new DriveFileManager();

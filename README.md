@@ -13,7 +13,7 @@ Telegram-бот, написаний на C# з використанням [Teleg
 ---
 
 ## 📌 Можливості
-- Обробка команд (`/start`, кастомні).
+- Обробка команд (`/start`, `/help` кастомні).
 - Відповіді текстовими повідомленнями.
 - Створення Google документів за шаблонами.
 - Логування всіх апдейтів.
@@ -32,31 +32,32 @@ Telegram-бот, написаний на C# з використанням [Teleg
 - NUnit, xUnit, Moq
 - Google APIs
 
-Структура проекту
+## 📂 Структура проєкту
 
-DocumentService/ # Рішення (Solution)
+```text
+DocumentService/                      # Рішення (Solution)
 ├── Solution Items/
-│ ├── .gitignore
-│ └── README.md
+│   ├── .gitignore
+│   └── README.md
 │
-├── DocumentService.Documents/ # Бібліотека для роботи з Google Drive
-│ ├── Tests/ # Тести
-│ │ ├── GoogleDriveIntegrationTests.cs # Інтеграційні тести з Google API
-│ │ ├── GoogleDriveMockTests.cs # Unit-тести з Moq
-│ │ └── credentials.json # Облікові дані для Google API
-│ │
-│ ├── Dates.cs # Допоміжний клас для роботи з датами
-│ ├── DriveFileManager.cs # Менеджер для керування файлами в Google Drive
-│ ├── IGoogleDriveService.cs # Інтерфейс сервісу Google Drive
-│ └── GoogleDriveService.cs # Реалізація сервісу Google Drive
+├── DocumentService.Documents/        # Бібліотека для роботи з Google Drive
+│   ├── Tests/                        # Тести
+│   │   ├── GoogleDriveIntegrationTests.cs   # Інтеграційні тести з Google API
+│   │   ├── GoogleDriveMockTests.cs          # Unit-тести з Moq
+│   │   └── credentials.json                 # Облікові дані для Google API
+│   │
+│   ├── Dates.cs                        # Допоміжний клас для роботи з датами
+│   ├── DriveFileManager.cs             # Менеджер для керування файлами в Google Drive
+│   ├── IGoogleDriveService.cs          # Інтерфейс сервісу Google Drive
+│   └── GoogleDriveService.cs           # Реалізація сервісу Google Drive
 │
-└── DocumentService.TelegramBotWS/ # Telegram Bot (Worker Service)
-├── Properties/
-│ └── launchSettings.json # Налаштування запуску
-│
-├── publish/ # Папка для публікації
-├── .env # Змінні середовища
-├── appsettings.json # Конфігурація застосунку
-├── DotEnv.cs # Завантаження .env
-├── Program.cs # Точка входу
-└── Worker.cs # Основний сервіс (BackgroundService)
+└── DocumentService.TelegramBotWS/      # Telegram Bot (Worker Service)
+    ├── Properties/
+    │   └── launchSettings.json         # Налаштування запуску
+    │
+    ├── publish/                        # Папка для публікації
+    ├── .env                            # Змінні середовища
+    ├── appsettings.json                # Конфігурація застосунку
+    ├── DotEnv.cs                       # Завантаження .env
+    ├── Program.cs                      # Точка входу
+    └── Worker.cs                       # Основний сервіс (BackgroundService)

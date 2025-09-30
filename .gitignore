@@ -1,0 +1,18 @@
+# System files
+.vs/
+*.user
+*.suo
+
+# Binaries
+bin/
+obj/
+
+# Configurations
+appsettings.Development.json
+.env
+
+# Logs
+*.log
+
+# Credentials
+credentials.json

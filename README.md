@@ -31,3 +31,32 @@ Telegram-бот, написаний на C# з використанням [Teleg
 - Microsoft.Extensions.Hosting (Worker Service)
 - NUnit, xUnit, Moq
 - Google APIs
+
+Структура проекту
+
+DocumentService/ # Рішення (Solution)
+├── Solution Items/
+│ ├── .gitignore
+│ └── README.md
+│
+├── DocumentService.Documents/ # Бібліотека для роботи з Google Drive
+│ ├── Tests/ # Тести
+│ │ ├── GoogleDriveIntegrationTests.cs # Інтеграційні тести з Google API
+│ │ ├── GoogleDriveMockTests.cs # Unit-тести з Moq
+│ │ └── credentials.json # Облікові дані для Google API
+│ │
+│ ├── Dates.cs # Допоміжний клас для роботи з датами
+│ ├── DriveFileManager.cs # Менеджер для керування файлами в Google Drive
+│ ├── IGoogleDriveService.cs # Інтерфейс сервісу Google Drive
+│ └── GoogleDriveService.cs # Реалізація сервісу Google Drive
+│
+└── DocumentService.TelegramBotWS/ # Telegram Bot (Worker Service)
+├── Properties/
+│ └── launchSettings.json # Налаштування запуску
+│
+├── publish/ # Папка для публікації
+├── .env # Змінні середовища
+├── appsettings.json # Конфігурація застосунку
+├── DotEnv.cs # Завантаження .env
+├── Program.cs # Точка входу
+└── Worker.cs # Основний сервіс (BackgroundService)
